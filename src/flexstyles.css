@@ -294,7 +294,8 @@ hgroup {
 
 @media screen and (max-width: 414px) {
     .home {
-       
+        height:auto;
+        width: auto;
         background-position: center;
         background-size: cover;
         background-attachment: fixed;
