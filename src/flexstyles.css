@@ -18,7 +18,7 @@ h1 {
     font-size: 62px;
     line-height: 72px;
     color: #FFF7E6;
-    margin-bottom: 130px;  
+  
 }
 
 h2{
@@ -75,7 +75,7 @@ nav>ul>li:hover {
 .home {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center; 
     text-align: center;
     height: 100vh;
@@ -86,7 +86,19 @@ nav>ul>li:hover {
     background-size: cover;
 }
 
+.main-contain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
+.panel>ul {
+    position: absolute;
+    bottom: 25%;
+    margin-left: 25px;
+   
+}
 
 .btn-main {
     background: rgba(5, 5, 5, 0.52);
@@ -98,7 +110,7 @@ nav>ul>li:hover {
     font-size: 14px;
     color: #FFF7E6;
     cursor: pointer; 
-    margin-bottom: 150px;
+    margin-top: 50px;
 }
 
 .btn-main:hover {
@@ -106,10 +118,6 @@ nav>ul>li:hover {
     color: black;
 }
 
-.loading-frame {
-    margin-left: 40px;
-    margin-bottom: 150px;
-}
 
 /** Products Section **/
 
@@ -272,20 +280,13 @@ hgroup {
         font-size: 38px;
         line-height: 52px;
         color: #FFF7E6;
-        margin-bottom: 25%;
     }
 
-    .btn-main {
-        background: rgba(5, 5, 5, 0.52);
-        border: 1px solid #FFF7E6;
-        box-sizing: border-box;
-        border-radius: 5px;
-        height: 40px;
-        width: 160px;
-        font-size: 14px;
-        color: #FFF7E6;
-        cursor: pointer; 
-        margin-bottom: 25%;
+    .panel>ul {
+        position: absolute;
+        bottom: 0;
+        margin-left: 25px;
+       
     }
 
     .about-box {
