@@ -10,6 +10,11 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: linear-gradient(180deg, #FFFFFF 4.54%, rgba(255, 255, 255, 0) 30.42%),linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../src/img/gravel1400x900.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 h1 {
@@ -79,13 +84,9 @@ nav>ul>li:hover {
     align-items: center; 
     text-align: center;
     height: 100vh;
-    width: 100vw; 
-    background-image: linear-gradient(180deg, #FFFFFF 4.54%, rgba(255, 255, 255, 0) 30.42%),linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../src/img/gravel1400x900.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
 }
+
+
 
 .btn-main {
     background: rgba(5, 5, 5, 0.52);
@@ -121,7 +122,8 @@ hgroup {
     flex-direction: column;
     text-align: center;
     width: 100vw;
-    align-items: center
+    align-items: center;
+    background-color:white;
 }
 
 .product-container {
@@ -293,13 +295,7 @@ hgroup {
 
 
 @media screen and (max-width: 414px) {
-    .home {
-        height:auto;
-        width: auto;
-        background-position: center;
-        background-size: cover;
-        background-attachment: fixed;
-    }
+
 }
 
   .loading-frame {
