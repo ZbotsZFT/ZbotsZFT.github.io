@@ -33,7 +33,7 @@
     <section class="panel home">
         <div class="main-contain">
             <h1>Щебінь - Гранітний, Львів.</h1>
-            <button class="btn-main" type="button">Дізнатися більше</button>
+            <button class="btn-main" type="button" onclick="smoothScroll(document.getElementById('products'))">Дізнатися більше</button>
         </div>
         <ul class="loading-frame">
                 <div class="circle"></div>
@@ -49,7 +49,7 @@
         </ul>
     </section>
 
-    <section class="products">
+    <section class="products" id="products">
         <hgroup>
             <h2>Продукція</h2>
             <h3>Щебінь Гранітний</h3>
@@ -133,7 +133,7 @@
 
         </div>
     </section>
-    <section class="panel gallery">
+    <section class="panel gallery" >
         <h2>Галерея</h2>
         <div class="photo-container">
             <div class="gallery-photo">
@@ -219,6 +219,31 @@ document.onreadystatechange = () => {
     document.getElementsByTagName('body')[0].classList.add("loaded");
   }
 };
+
+window.smoothScroll = function(target) {
+    var scrollContainer = target;
+    do { //find scroll container
+        scrollContainer = scrollContainer.parentNode;
+        if (!scrollContainer) return;
+        scrollContainer.scrollTop += 1;
+    } while (scrollContainer.scrollTop == 0);
+    
+    var targetY = 0;
+    do { //find the top of target relatively to the container
+        if (target == scrollContainer) break;
+        targetY += target.offsetTop;
+    } while (target = target.offsetParent);
+    
+    scroll = function(c, a, b, i) {
+        i++; if (i > 30) return;
+        c.scrollTop = a + (b - a) / 30 * i;
+        setTimeout(function(){ scroll(c, a, b, i); }, 20);
+    }
+    // start scrolling
+    scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+}
+
+
     // Initialize and add the map
     function initMap() {
         // The location of Uluru

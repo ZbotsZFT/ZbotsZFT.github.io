@@ -136,8 +136,7 @@ animation-fill-mode: forwards;
 }
 */
 .btn-main:hover {
-    background-color: white;
-    color: black;
+  
 }
 
 
@@ -174,7 +173,12 @@ hgroup {
     max-width: 450px;
     padding: 15px;
 }
+button:focus {outline:0; }
 
+button:active{
+    background-color: white;
+    color: black;
+}
 .product-photo {
     width: 200px;
     height: 200px;
