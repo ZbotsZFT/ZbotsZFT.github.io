@@ -23,6 +23,9 @@ h1 {
 
 h2{
     margin-top:60px;
+    background-color: gray;
+    color: white;
+    line-height: 40px;
 }
 
 h3 {
