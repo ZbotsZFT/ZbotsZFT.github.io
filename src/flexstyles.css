@@ -163,6 +163,7 @@ hgroup {
     justify-content: center;
     max-width: 960px;
     margin-top: 40px;
+    overflow: hidden;
 }
 
 .product-box {
