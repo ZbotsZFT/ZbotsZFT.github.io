@@ -10,11 +10,6 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: linear-gradient(180deg, #FFFFFF 4.54%, rgba(255, 255, 255, 0) 30.42%),linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../src/img/gravel1400x900.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
 }
 
 h1 {
@@ -84,6 +79,11 @@ nav>ul>li:hover {
     align-items: center; 
     text-align: center;
     height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(180deg, #FFFFFF 4.54%, rgba(255, 255, 255, 0) 30.42%),linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../src/img/gravel1400x900.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 
@@ -166,7 +166,6 @@ hgroup {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: white;
 }
 
 .about-us-container {
@@ -296,11 +295,8 @@ hgroup {
 
 
 @media screen and (max-width: 414px) {
-    body {
+    .home {
         background-image: linear-gradient(180deg, #FFFFFF 1.54%, rgba(255, 255, 255, 0) 5.42%),linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../src/img/gg14.jpg);
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
     }
 }
 
