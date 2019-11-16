@@ -92,7 +92,17 @@ nav>ul>li:hover {
     align-items: center;
     justify-content: center;
 }
+.main-contain>h1 {
+    animation: heading;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    position: relative;
+}
 
+@keyframes heading{
+    0% {right:100vw;}
+    100% {right: 0;}
+}
 .panel>ul {
     position: absolute;
     bottom: 25%;
@@ -102,6 +112,7 @@ nav>ul>li:hover {
 
 .btn-main {
     background: rgba(5, 5, 5, 0.52);
+    opacity: 0;
     border: 1px solid #FFF7E6;
     box-sizing: border-box;
     border-radius: 5px;
@@ -111,8 +122,16 @@ nav>ul>li:hover {
     color: #FFF7E6;
     cursor: pointer; 
     margin-top: 50px;
+    animation-name: btn;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
 }
 
+@keyframes btn {
+    0% {opacity: 0;}
+    100% {opacity: 1}
+}
 .btn-main:hover {
     background-color: white;
     color: black;
