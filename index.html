@@ -11,6 +11,11 @@
 </head>
 
 <body>
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
     <header>
         <img class="logo" src="src/img/logo.svg" alt="So Group Logo">
         <nav>
@@ -26,8 +31,8 @@
     </header>
     <section class="panel home">
         <div class="main-contain">
-        <h1>Щебінь - Гранітний, Львів.</h1>
-        <button class="btn-main" type="button">Дізнатися більше</button>
+            <h1>Щебінь - Гранітний, Львів.</h1>
+            <button class="btn-main" type="button">Дізнатися більше</button>
         </div>
         <ul class="loading-frame">
                 <div class="circle"></div>
@@ -40,7 +45,7 @@
                 <div class="circle"></div>
                 <div class="circle"></div>
                 <div class="circle"></div>
-            </ul>
+        </ul>
     </section>
 
     <section class="products">
@@ -200,6 +205,11 @@
 <script async defer src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAB1THyhXY5DHDeoDkt3D35EGaxNJ8WZ_M&callback=initMap">
 </script>
 <script>
+
+document.addEventListener('DOMContentLoaded', function(){ // Аналог $(document).ready(function(){
+    document.getElementsByTagName('body')[0].classList.add("loaded");
+ 
+});
     // Initialize and add the map
     function initMap() {
         // The location of Uluru
@@ -211,6 +221,7 @@
         // The marker, positioned at Uluru
         var marker = new google.maps.Marker({ position: uluru, map: map });
     }
+
 </script>
 <!--<script>
     $(function () { // wait for document ready
