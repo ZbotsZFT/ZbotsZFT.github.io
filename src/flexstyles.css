@@ -184,6 +184,8 @@ hgroup {
 
 .product-desc {
     margin-top: 20px;
+    text-align: justify;
+    text-indent: 35px;
 }
 
 .circle-img{
