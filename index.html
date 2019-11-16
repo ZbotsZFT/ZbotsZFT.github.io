@@ -206,10 +206,14 @@
 </script>
 <script>
 
-document.addEventListener('DOMContentLoaded', function(){ // Аналог $(document).ready(function(){
-    document.getElementsByTagName('body')[0].classList.add("loaded");
+   
  
-});
+
+document.onreadystatechange = () => {
+  if (document.readyState === 'complete') {
+    document.getElementsByTagName('body')[0].classList.add("loaded");
+  }
+};
     // Initialize and add the map
     function initMap() {
         // The location of Uluru
