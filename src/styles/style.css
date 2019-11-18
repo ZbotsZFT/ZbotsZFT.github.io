@@ -178,7 +178,7 @@ hgroup {
 }
 button:focus {outline:0; }
 
-button:active{
+button:hover, button:active{
     background-color: white;
     color: black;
 }
@@ -272,7 +272,7 @@ button:active{
     transition: 1s;    
 }
 
-.gallery-img:hover {
+.gallery-img:hover, .gallery-img:active {
     filter: grayscale(0);
     transform: scale(1.1);
 }
