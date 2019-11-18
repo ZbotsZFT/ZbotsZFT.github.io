@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/png" href="src/img/logo.png" />
-    <link rel="stylesheet" href="src/flexstyles.css">
+    <link rel="shortcut icon" type="image/png" href="images/logo.svg" />
+    <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="styles/lightbox.min.css" />    
     <title>Document</title>
 </head>
 
@@ -18,9 +19,9 @@
         <div class="loader-section section-right"></div>
     </div>
     <header>
-        <img class="logo" src="src/img/logo.svg" alt="So Group Logo">
+        <img class="logo" src="images/logo.svg" alt="So Group Logo">
         <nav>
-            <img class="hamburger" src="src/img/burgermenu.svg" alt="Burger Menu">
+            <img class="hamburger" src="images/burgermenu.svg" alt="Burger Menu">
             <ul>
                 <li>ГОЛОВНА</li>
                 <li>ПРОДУКЦІЯ</li>
@@ -57,7 +58,7 @@
         <div class="product-container">
             <div data-aos="fade-right"  data-aos-duration="1000" data-aos-offset="100" class="product-box">
                 <div class="product-photo">
-                    <img src="src/img/0-5.jpeg" class="circle-img">
+                    <img src="images/0-5.jpeg" class="circle-img">
                 </div>
                 <div class="product-desc">
                     <p>
@@ -67,7 +68,7 @@
             </div>
             <div data-aos="fade-left"  data-aos-duration="1000" data-aos-offset="100" class="product-box">
                 <div class="product-photo">
-                    <img src="src/img/5-20.jpeg" class="circle-img">
+                    <img src="images/5-20.jpeg" class="circle-img">
                 </div>
                 <div class="product-desc">
                     <p>
@@ -77,7 +78,7 @@
             </div>
             <div data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000" data-aos-offset="100"  class="product-box">
                 <div class="product-photo">
-                    <img src="src/img/20-40.jpeg" class="circle-img">
+                    <img src="images/20-40.jpeg" class="circle-img">
                 </div>
                 <div class="product-desc">
                     <p>
@@ -87,7 +88,7 @@
             </div>
             <div data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000"  data-aos-offset="100" class="product-box">
                 <div class="product-photo">
-                    <img src="src/img/40-70.jpeg" class="circle-img">
+                    <img src="images/40-70.jpeg" class="circle-img">
                 </div>
                 <div class="product-desc">
                     <p>
@@ -137,25 +138,25 @@
         <h2>Галерея</h2>
         <div class="photo-container">
             <div class="gallery-photo">
-                <img src="src/img/slide1.jpeg" class="gallery-img">
+                <a href="images/slide1.jpeg" data-lightbox="mygallery"><img src="images/slide1.jpeg" class="gallery-img"></a>
             </div>
             <div class="gallery-photo">
-                <img src="src/img/slide2.JPG" class="gallery-img">
+                    <a href="images/slide2.JPG" data-lightbox="mygallery"><img src="images/slide2.JPG" class="gallery-img"></a>
             </div>
             <div class="gallery-photo">
-                <img src="src/img/slide3.jpeg" class="gallery-img">
+                    <a href="images/slide3.jpeg" data-lightbox="mygallery"><img src="images/slide3.jpeg" class="gallery-img"></a>
             </div>
             <div class="gallery-photo">
-                <img src="src/img/slide4.jpg" class="gallery-img">
+                    <a href="images/slide4.jpg" data-lightbox="mygallery"><img src="images/slide4.jpg" class="gallery-img"></a>
             </div>
             <div class="gallery-photo">
-                <img src="src/img/slide5.JPG" class="gallery-img">
+                    <a href="images/slide5.JPG" data-lightbox="mygallery"><img src="images/slide5.JPG" class="gallery-img"></a>
             </div>
             <div class="gallery-photo">
-                <img src="src/img/slide6.jpg" class="gallery-img">
+                    <a href="images/slide6.jpeg" data-lightbox="mygallery"><img src="images/slide6.jpeg" class="gallery-img"></a>
             </div>
             <div class="gallery-photo">
-                <img src="src/img/slide7.JPG" class="gallery-img">
+                    <a href="images/slide7.JPG" data-lightbox="mygallery"><img src="images/slide7.JPG" class="gallery-img"></a>
             </div>
         </div>
         </div>
@@ -202,6 +203,8 @@
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="lightbox-plus-jquery.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
 <script async defer src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAB1THyhXY5DHDeoDkt3D35EGaxNJ8WZ_M&callback=initMap">
 </script>
