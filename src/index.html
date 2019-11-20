@@ -49,6 +49,62 @@
             <div class="circle"></div>
         </ul>
     </section>
+    <section class="panel calc">
+        <h2>Замовити</h2>
+
+        <div class="table-wrapper">
+            <table class="table">
+                <tr class="table-header">
+                    <th>Фракція</th>
+                    <th>м
+                        <sup>3</sup>
+                    </th>
+                    <th>Ціна за 1т/грн</th>
+                    <th>Сума грн</th>
+                </tr>
+                <tr class="row">
+                    <td>0-5 мм</td>
+                    <td>
+                        <span class="input-number-decrement input-number-decrement0">–</span><input class="input-number input-number0" type="number" value="0" min="0" max="120" formula="445"><span class="input-number-increment input-number-increment0">+</span>
+                    </td>
+                    <td>455</td>
+                    <td class="calc-cell" ><span id="result0"></span></td>
+                </tr>
+                <tr class="row">
+                    <td>5-20 мм</td>
+                    <td>
+                            <span class="input-number-decrement input-number-decrement1">–</span><input class="input-number input-number1" type="number" value="0" min="0" max="120" formula="515"><span class="input-number-increment input-number-increment1">+</span>
+                    </td>
+                    <td>515</td>
+                    <td class="calc-cell" ><span id="result1"></span></td>
+                </tr>
+                <tr class="row">
+                    <td>20-40 мм</td>
+                    <td>
+                            <span class="input-number-decrement input-number-decrement2">–</span><input class="input-number input-number2" type="number" value="0" min="0" max="120" formula="560"><span class="input-number-increment input-number-increment2">+</span>
+                    </td>
+                    <td>560</td>
+                    <td class="calc-cell" ><span id="result2"></span></td>
+                </tr>
+                <tr class="row">
+                    <td>40-70 мм</td>
+                    <td>
+                            <span class="input-number-decrement input-number-decrement3" >–</span><input class="input-number input-number3" type="number" value="0" min="0" max="120" formula="590"><span class="input-number-increment input-number-increment3">+</span>
+                    </td>
+                    <td>590</td>
+                    <td class="calc-cell"><span id="result3"></span></td>
+                </tr>
+                <tr class="result-row">
+                        <td colspan="2"><button class="price-btn" type="submit">Відправити</button></td>
+                        <td></td>
+                        <td> <span id="price">0</span><hr id="price-line"></td>
+                    </tr>
+            </table>
+           
+        </div>
+        
+    </section>
+
 
     <section class="products" id="products">
         <hgroup>
@@ -178,7 +234,7 @@
     </section>
 
 
-    
+
 
 
     <section class="panel contact">
@@ -194,7 +250,7 @@
 
             <div class="adress-wrapper">
                 <div class="adress-box">
-                        <div class="green-circle"></div>
+                    <div class="green-circle"></div>
                     <p>
                         <strong>Адреса складу:</strong> м.Львів, вул. Шевченка 311
                     </p>
@@ -204,12 +260,12 @@
                 <div class="adress-box">
                     <div class="green-circle"></div>
                     <p>
-                    <strong>Контактні тел.:</strong> (097) 198 - 82 - 81,
-                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    (066) 503 - 02 - 84.</p>
+                        <strong>Контактні тел.:</strong> (097) 198 - 82 - 81,
+                        <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        (066) 503 - 02 - 84.</p>
                 </div>
                 <div class="adress-box">
-                        <div class="green-circle"></div>
+                    <div class="green-circle"></div>
                     <p>
                         <strong>E-mail:</strong> cogroupua@gmail.com
                     </p>
@@ -226,22 +282,109 @@
             <p>Copyright © 2019~2020</p>
         </div>
     </section>
+      <!--
+    BEFORE RUNNING:
+    ---------------
+    1. If not already done, enable the Google Sheets API
+       and check the quota for your project at
+       https://console.developers.google.com/apis/api/sheets
+    2. Get access keys for your application. See
+       https://developers.google.com/api-client-library/javascript/start/start-js#get-access-keys-for-your-application
+    3. For additional information on authentication, see
+       https://developers.google.com/sheets/api/quickstart/js#step_2_set_up_the_sample
+    -->
+   
+            <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
+            <button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
 
 </body>
+
+ <script>
+        
+              function makeApiCall() {
+                var params = {
+                  // The spreadsheet to request.
+                  spreadsheetId: '1OTesh9QbqUW0ThkbetO-Cjpzl809uzSv9yyis93UxGo',  // TODO: Update placeholder value.
+          
+                  // The ranges to retrieve from the spreadsheet.
+                  ranges: ['Аркуш1'],  // TODO: Update placeholder value.
+          
+                  // True if grid data should be returned.
+                  // This parameter is ignored if a field mask was set in the request.
+                  includeGridData: false,  // TODO: Update placeholder value.
+                };
+          
+                var request = gapi.client.sheets.spreadsheets.get(params);
+                request.then(function(response) {
+                  // TODO: Change code below to process the `response` object:
+                  console.log(response.result);
+                }, function(reason) {
+                  console.error('error: ' + reason.result.error.message);
+                });
+              }
+          
+              function initClient() {
+                var API_KEY = 'AIzaSyBwqY9Uh5sSwJNxDBvklk5aWr5-4m6sDSs';  // TODO: Update placeholder with desired API key.
+          
+                var CLIENT_ID = '4044504920-ularqhfu2pdh0ck7584qshegi0megqat.apps.googleusercontent.com';  // TODO: Update placeholder with desired client ID.
+          
+                // TODO: Authorize using one of the following scopes:
+                //   'https://www.googleapis.com/auth/drive'
+                //   'https://www.googleapis.com/auth/drive.file'
+                //   'https://www.googleapis.com/auth/drive.readonly'
+                //   'https://www.googleapis.com/auth/spreadsheets'
+                //   'https://www.googleapis.com/auth/spreadsheets.readonly'
+                var SCOPE = 'https://www.googleapis.com/auth/spreadsheets.readonly';
+          
+                gapi.client.init({
+                  'apiKey': API_KEY,
+                  'clientId': CLIENT_ID,
+                  'scope': SCOPE,
+                  'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+                }).then(function() {
+                  gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
+                  updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+                });
+              }
+          
+              function handleClientLoad() {
+                gapi.load('client:auth2', initClient);
+              }
+          
+              function updateSignInStatus(isSignedIn) {
+                if (isSignedIn) {
+                  makeApiCall();
+                }
+              }
+          
+              function handleSignInClick(event) {
+                gapi.auth2.getAuthInstance().signIn();
+              }
+          
+              function handleSignOutClick(event) {
+                gapi.auth2.getAuthInstance().signOut();
+              }
+    
+              </script>
+              <script async defer src="https://apis.google.com/js/api.js?key=AIzaSyAB1THyhXY5DHDeoDkt3D35EGaxNJ8WZ_M"
+              onload="this.onload=function(){};handleClientLoad()"
+              onreadystatechange="if (this.readyState === 'complete') this.onload()">
+              </script>
+          
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="lightbox-plus-jquery.min.js"></script>
+<script src="index.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB1THyhXY5DHDeoDkt3D35EGaxNJ8WZ_M&callback=initMap">
+<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB1THyhXY5DHDeoDkt3D35EGaxNJ8WZ_M&callback=initMap">-->
 </script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init();
 </script>
+
+
 <script>
-
-
-
 
     document.onreadystatechange = () => {
         if (document.readyState === 'complete') {
@@ -266,11 +409,14 @@
         scroll = function (c, a, b, i) {
             i++; if (i > 30) return;
             c.scrollTop = a + (b - a) / 30 * i;
-            setTimeout(function () { scroll(c, a, b, i); }, 20);
+            setTimeout(function () { scroll(c, a, b, i); }, 30);
         }
         // start scrolling
         scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
-    }
+    };
+
+
+   
 
 
     // Initialize and add the map
